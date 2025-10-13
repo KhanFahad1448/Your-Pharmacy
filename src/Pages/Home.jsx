@@ -1,72 +1,170 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import bgImage from "../assets/bgImage.jpg";
+import fullbody from "../assets/fullbody.jpg";
+import vitamins from "../assets/vitamins.jpg";
+import diabetes from "../assets/diabetes.jpg";
+import fever from "../assets/fever.jpg";
+import hairNskin from "../assets/hairNskin.jpg";
+import thyroid from "../assets/thyroid.jpg";
 
 const Home = () => {
-  // Header height in px (adjust if your Navbar height changes)
   const headerHeight = 120;
 
   return (
-    <div className="bg-gray-50">
-      {/* Hero Section */}
-      <section
-        className="relative w-full"
-        style={{
-          height: `calc(100vh - ${headerHeight}px)`,
-          backgroundImage: `url(${bgImage})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+    <div
+      className="relative min-h-screen bg-cover bg-center bg-no-repeat text-white"
+      style={{
+        backgroundImage: `url(${bgImage})`,
+        backgroundAttachment: "fixed",
+      }}
+    >
+      {/* Overlay for overall background */}
+      <div className="absolute inset-0 bg-black/40"></div>
 
-        {/* Hero Content */}
-        <div className="relative z-10 flex flex-col justify-center items-center h-full text-center px-6">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight text-white">
+      {/* Content */}
+      <div className="relative z-10">
+        {/* Hero Section */}
+        <section
+          className="flex flex-col justify-center items-center text-center px-4 sm:px-6 md:px-12"
+          style={{ height: `calc(100vh - ${headerHeight}px)` }}
+        >
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
             Welcome to <span className="text-blue-400">Your Pharmacy</span>
           </h1>
-          <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-2xl">
-            Your one-stop online pharmacy — Fast delivery, genuine products, and amazing deals every day.
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 max-w-2xl text-gray-100">
+            Your one-stop online pharmacy — Fast delivery, genuine products, and
+            amazing deals every day.
           </p>
           <Link
             to="/products"
-            className="bg-white text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition shadow-md"
+            className="bg-white text-blue-600 px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-sm sm:text-lg font-semibold hover:bg-gray-100 transition shadow-md"
           >
             Shop Now
           </Link>
-        </div>
-      </section>
+        </section>
 
-      {/* Features Section */}
-      <section className="py-24 px-6 max-w-7xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-16 text-gray-800">
-          Why Choose <span className="text-blue-600">Your Pharmacy?</span>
-        </h2>
+        {/* Features Section */}
+        <section className="py-16 sm:py-20 px-4 sm:px-6 md:px-12 max-w-7xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 sm:mb-16 text-white drop-shadow-md">
+            Why Choose <span className="text-blue-400">Your Pharmacy?</span>
+          </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
-          <div className="bg-white p-10 rounded-2xl shadow-lg hover:shadow-2xl transition">
-            <h3 className="text-2xl font-semibold mb-3 text-blue-600">Same Day Delivery</h3>
-            <p className="text-gray-600 text-lg">
-              Order before <span className="font-medium">6 PM</span> and get your medicines delivered the same day.
-            </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-12 text-center">
+            <div className="bg-white/20 backdrop-blur-md p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-2xl transition">
+              <h3 className="text-xl sm:text-2xl font-semibold mb-2 sm:mb-3 text-blue-300">
+                Same Day Delivery
+              </h3>
+              <p className="text-gray-100 text-sm sm:text-base">
+                Order before <span className="font-medium text-white">6 PM</span> and get your medicines delivered the same day.
+              </p>
+            </div>
+
+            <div className="bg-white/20 backdrop-blur-md p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-2xl transition">
+              <h3 className="text-xl sm:text-2xl font-semibold mb-2 sm:mb-3 text-blue-300">
+                Genuine Products
+              </h3>
+              <p className="text-gray-100 text-sm sm:text-base">
+                All medicines are 100% authentic and sourced from trusted suppliers.
+              </p>
+            </div>
+
+            <div className="bg-white/20 backdrop-blur-md p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-2xl transition">
+              <h3 className="text-xl sm:text-2xl font-semibold mb-2 sm:mb-3 text-blue-300">
+                Easy Returns
+              </h3>
+              <p className="text-gray-100 text-sm sm:text-base">
+                Hassle-free returns and excellent customer support for all orders.
+              </p>
+            </div>
           </div>
+        </section>
 
-          <div className="bg-white p-10 rounded-2xl shadow-lg hover:shadow-2xl transition">
-            <h3 className="text-2xl font-semibold mb-3 text-blue-600">Genuine Products</h3>
-            <p className="text-gray-600 text-lg">
-              All medicines are 100% authentic and sourced from trusted suppliers.
-            </p>
-          </div>
+        {/* Lab Tests by Health Concern Section (same styling as Features) */}
+        <section className="py-16 sm:py-20 px-4 sm:px-6 md:px-12 max-w-7xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-4 text-white drop-shadow-md">
+            Lab Tests by <span className="text-blue-400">Health Concern</span>
+          </h2>
+          <p className="text-center text-gray-200 mb-12 text-sm sm:text-base">
+            Powered by{" "}
+            <span className="font-semibold text-red-400">Thyrocare</span>
+          </p>
 
-          <div className="bg-white p-10 rounded-2xl shadow-lg hover:shadow-2xl transition">
-            <h3 className="text-2xl font-semibold mb-3 text-blue-600">Easy Returns</h3>
-            <p className="text-gray-600 text-lg">
-              Hassle-free returns and excellent customer support for all orders.
-            </p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 text-center">
+            {/* Card 1 */}
+            <div className="bg-white/20 backdrop-blur-md p-6 rounded-2xl shadow-lg hover:shadow-2xl transition">
+              <img
+                src= {fullbody}
+                alt="Full Body Checkups"
+                className="mx-auto mb-3 h-20 object-contain rounded-lg"
+              />
+              <h3 className="text-white font-semibold text-sm sm:text-base">
+                Full Body Checkups
+              </h3>
+            </div>
+
+            {/* Card 2 */}
+            <div className="bg-white/20 backdrop-blur-md p-6 rounded-2xl shadow-lg hover:shadow-2xl transition">
+              <img
+                src={vitamins}
+                alt="Vitamins"
+                className="mx-auto mb-3 h-20 object-contain rounded-lg"
+              />
+              <h3 className="text-white font-semibold text-sm sm:text-base">
+                Vitamins
+              </h3>
+            </div>
+
+            {/* Card 3 */}
+            <div className="bg-white/20 backdrop-blur-md p-6 rounded-2xl shadow-lg hover:shadow-2xl transition">
+              <img
+                src={diabetes}
+                alt="Diabetes"
+                className="mx-auto mb-3 h-20 object-contain rounded-lg"
+              />
+              <h3 className="text-white font-semibold text-sm sm:text-base">
+                Diabetes
+              </h3>
+            </div>
+
+            {/* Card 4 */}
+            <div className="bg-white/20 backdrop-blur-md p-6 rounded-2xl shadow-lg hover:shadow-2xl transition">
+              <img
+                src={fever}
+                alt="Fever & Infection"
+                className="mx-auto mb-3 h-20 object-contain rounded-lg"
+              />
+              <h3 className="text-white font-semibold text-sm sm:text-base">
+                Fever & Infection
+              </h3>
+            </div>
+
+            {/* Card 5 */}
+            <div className="bg-white/20 backdrop-blur-md p-6 rounded-2xl shadow-lg hover:shadow-2xl transition">
+              <img
+                src={hairNskin}
+                alt="Hair & Skin Care"
+                className="mx-auto mb-3 h-20 object-contain rounded-lg"
+              />
+              <h3 className="text-white font-semibold text-sm sm:text-base">
+                Hair & Skin Care
+              </h3>
+            </div>
+
+            {/* Card 6 */}
+            <div className="bg-white/20 backdrop-blur-md p-6 rounded-2xl shadow-lg hover:shadow-2xl transition">
+              <img
+                src={thyroid}
+                alt="Thyroid"
+                className="mx-auto mb-3 h-20 object-contain rounded-lg"
+              />
+              <h3 className="text-white font-semibold text-sm sm:text-base">
+                Thyroid
+              </h3>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </div>
   );
 };

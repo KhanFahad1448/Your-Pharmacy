@@ -1,5 +1,4 @@
-// src/Context/LabTestsContext.jsx
-import { createContext, useState } from "react";
+import React, { createContext, useState } from "react";
 
 export const LabTestsContext = createContext();
 
@@ -7,14 +6,12 @@ export const LabTestsProvider = ({ children }) => {
   const [bookedTests, setBookedTests] = useState([]);
 
   const bookTest = (test) => {
-    // Avoid duplicates
-    if (!bookedTests.find((t) => t.id === test.id)) {
-      setBookedTests([...bookedTests, test]);
-    }
+    const exists = bookedTests.some((t) => t.id === test.id);
+    if (!exists) setBookedTests((prev) => [...prev, test]);
   };
 
   const removeTest = (id) => {
-    setBookedTests(bookedTests.filter((t) => t.id !== id));
+    setBookedTests((prev) => prev.filter((test) => test.id !== id));
   };
 
   return (

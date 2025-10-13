@@ -2,7 +2,7 @@
 
 const labTests = [
   {
-    id: 1,
+    id: 73,
     name: "Complete Blood Count (CBC)",
     price: 250,
     discount: 20,
@@ -10,7 +10,7 @@ const labTests = [
     description: "Measures overall health and detects disorders like anemia.",
   },
   {
-    id: 2,
+    id: 74,
     name: "Thyroid Profile",
     price: 500,
     discount: 15,
@@ -18,7 +18,7 @@ const labTests = [
     description: "Assesses thyroid function for hypothyroidism or hyperthyroidism.",
   },
   {
-    id: 3,
+    id: 75,
     name: "Liver Function Test (LFT)",
     price: 700,
     discount: 10,
@@ -26,7 +26,7 @@ const labTests = [
     description: "Checks liver health by analyzing enzyme and protein levels.",
   },
   {
-    id: 4,
+    id: 76,
     name: "Diabetes Screening",
     price: 350,
     discount: 25,
@@ -34,7 +34,7 @@ const labTests = [
     description: "Evaluates blood sugar levels to detect diabetes.",
   },
   {
-    id: 5,
+    id: 77,
     name: "Cardiac Risk Markers",
     price: 1200,
     discount: 30,
@@ -42,7 +42,7 @@ const labTests = [
     description: "Assesses risk for heart diseases through biomarkers.",
   },
   {
-    id: 6,
+    id: 78,
     name: "Vitamin D Test",
     price: 600,
     discount: 10,
@@ -50,7 +50,7 @@ const labTests = [
     description: "Measures the level of Vitamin D to ensure bone and immune health.",
   },
   {
-    id: 7,
+    id: 79,
     name: "Kidney Function Test (KFT)",
     price: 650,
     discount: 15,
@@ -58,7 +58,7 @@ const labTests = [
     description: "Assesses kidney health by analyzing creatinine and urea levels.",
   },
   {
-    id: 8,
+    id: 80,
     name: "Iron Studies",
     price: 400,
     discount: 5,
@@ -66,7 +66,7 @@ const labTests = [
     description: "Evaluates iron levels to detect anemia or iron deficiency.",
   },
   {
-    id: 9,
+    id: 81,
     name: "Lipid Profile",
     price: 500,
     discount: 20,
@@ -74,7 +74,7 @@ const labTests = [
     description: "Measures cholesterol and triglycerides to assess heart health.",
   },
   {
-    id: 10,
+    id: 82,
     name: "HbA1c Test",
     price: 450,
     discount: 10,
@@ -82,7 +82,7 @@ const labTests = [
     description: "Checks average blood sugar levels over the past 2-3 months.",
   },
   {
-    id: 11,
+    id: 83,
     name: "Vitamin B12 Test",
     price: 550,
     discount: 12,
@@ -90,7 +90,7 @@ const labTests = [
     description: "Determines Vitamin B12 levels to prevent anemia and nerve disorders.",
   },
   {
-    id: 12,
+    id: 84,
     name: "Prostate-Specific Antigen (PSA)",
     price: 800,
     discount: 15,
@@ -98,7 +98,7 @@ const labTests = [
     description: "Screens for prostate abnormalities in men.",
   },
   {
-    id: 13,
+    id: 85,
     name: "Pap Smear Test",
     price: 700,
     discount: 20,
@@ -106,7 +106,7 @@ const labTests = [
     description: "Detects cervical cancer and other abnormal cells in women.",
   },
   {
-    id: 14,
+    id: 86,
     name: "C-Reactive Protein (CRP)",
     price: 350,
     discount: 10,
@@ -114,7 +114,7 @@ const labTests = [
     description: "Identifies inflammation in the body and monitors chronic diseases.",
   },
   {
-    id: 15,
+    id: 87,
     name: "Urine Routine Test",
     price: 200,
     discount: 5,
@@ -122,7 +122,7 @@ const labTests = [
     description: "Checks urine composition to detect infections or kidney disorders.",
   },
   {
-    id: 16,
+    id: 88,
     name: "Electrolyte Panel",
     price: 550,
     discount: 15,
@@ -130,7 +130,7 @@ const labTests = [
     description: "Measures essential electrolytes for hydration and organ function.",
   },
   {
-    id: 17,
+    id: 89,
     name: "Chest X-Ray",
     price: 700,
     discount: 20,
@@ -138,7 +138,7 @@ const labTests = [
     description: "Provides images of the chest to diagnose lung or heart conditions.",
   },
   {
-    id: 18,
+    id: 90,
     name: "Ultrasound Abdomen",
     price: 1200,
     discount: 25,
@@ -146,7 +146,7 @@ const labTests = [
     description: "Evaluates organs in the abdomen for abnormalities or diseases.",
   },
   {
-    id: 19,
+    id: 91,
     name: "Allergy Panel",
     price: 1500,
     discount: 30,
@@ -154,7 +154,7 @@ const labTests = [
     description: "Identifies allergic reactions to various environmental or food allergens.",
   },
   {
-    id: 20,
+    id: 92,
     name: "Thyroid Antibodies Test",
     price: 650,
     discount: 12,
@@ -162,7 +162,7 @@ const labTests = [
     description: "Detects autoimmune thyroid disorders like Hashimoto's disease.",
   },
   {
-    id: 21,
+    id: 93,
     name: "Electrocardiogram (ECG)",
     price: 400,
     discount: 10,
@@ -170,7 +170,7 @@ const labTests = [
     description: "Records the heart's electrical activity to identify cardiac issues.",
   },
   {
-    id: 22,
+    id: 94,
     name: "Bone Density Test (DEXA Scan)",
     price: 1800,
     discount: 20,
@@ -178,7 +178,7 @@ const labTests = [
     description: "Measures bone strength to assess risk of osteoporosis.",
   },
   {
-    id: 23,
+    id: 95,
     name: "Hepatitis B Surface Antigen (HBsAg)",
     price: 600,
     discount: 15,
@@ -186,20 +186,12 @@ const labTests = [
     description: "Screens for Hepatitis B infection in the body.",
   },
   {
-    id: 24,
+    id: 96,
     name: "HIV Screening Test",
     price: 500,
     discount: 10,
     category: "Infectious Disease",
     description: "Detects HIV infection early for timely treatment.",
-  },
-  {
-    id: 25,
-    name: "Stool Routine Test",
-    price: 300,
-    discount: 5,
-    category: "Digestive Health",
-    description: "Analyzes stool to detect infections or digestive issues.",
   }
 ];
 

@@ -18,7 +18,26 @@ import coughSyrup from "..//Images/coughSyrup.jpg";
 import calciumVitaminD3 from "..//Images/calcium+Vitamin.jpg";
 import omeprazole from "..//Images/omeprazole.jpg";
 import levocetirizine from "..//Images/levocetirizine.jpg";
-
+import aspirin from "..//Images/aspirin.jpg";
+import glucosamine from "..//Images/glucosamine.jpg";
+import glibenclamide from "..//Images/glibenclamide.jpg";
+import moisturizingCream from "..//Images/moisturizingCream.jpg";
+import vitaminD3 from "..//Images/vitaminD3.jpg";
+import coldFluRelief from "..//Images/coldFluRelief.jpg";
+import atorvastatinTablet from "..//Images/atorvastatin.jpg";
+import probiotic from "..//Images/probiotic.jpg";
+import naproxen from "..//Images/naproxen.jpg";
+import biotin from "..//Images/biotin.jpg";
+import magnesiumCalcium from "..//Images/magnesiumCalcium.jpg";
+import salbutamolInhaler from "..//Images/salbutamolInhaler.jpg";
+import oralSolution from "..//Images/oralSolution.jpg";
+import handSanitizer from "..//Images/handSanitizer.jpg";
+import levocetirizine5mg from "..//Images/levocetirizine5mg.jpg";
+import cefixime from "..//Images/cefixime.jpg";
+import multivitaminSyrup from "..//Images/multivitaminSyrup.jpg";
+import antiFungalCream from "..//Images/antiFungalCream.jpg";
+import glimepiride from "..//Images/glimepiride.jpg";
+import vitaminBcomplex from "..//Images/vitaminBcomplex.jpg";
 
 const medicine = [
   {
@@ -190,7 +209,7 @@ const medicine = [
     rating: 4.6,
     category: "Pain Relief",
     expiryDate: "2026-12-01",
-    images: "https://via.placeholder.com/200x150?text=Aspirin"
+    images: aspirin
   },
   {
     id: 22,
@@ -201,7 +220,7 @@ const medicine = [
     rating: 4.7,
     category: "Supplements",
     expiryDate: "2027-01-15",
-    images: "https://via.placeholder.com/200x150?text=Glucosamine"
+    images: glucosamine
   },
   {
     id: 23,
@@ -212,7 +231,7 @@ const medicine = [
     rating: 4.5,
     category: "Diabetic Care",
     expiryDate: "2026-03-20",
-    images: "https://via.placeholder.com/200x150?text=Glibenclamide"
+    images: glibenclamide
   },
   {
     id: 24,
@@ -223,7 +242,7 @@ const medicine = [
     rating: 4.6,
     category: "Skin Care",
     expiryDate: "2026-09-10",
-    images: "https://via.placeholder.com/200x150?text=Moisturizing+Cream"
+    images: moisturizingCream
   },
   {
     id: 25,
@@ -234,7 +253,7 @@ const medicine = [
     rating: 4.8,
     category: "Vitamins",
     expiryDate: "2027-05-01",
-    images: "https://via.placeholder.com/200x150?text=Vitamin+D3"
+    images: vitaminD3
   },
   {
     id: 26,
@@ -245,7 +264,7 @@ const medicine = [
     rating: 4.5,
     category: "Cold & Flu",
     expiryDate: "2026-08-15",
-    images: "https://via.placeholder.com/200x150?text=Cold+Flu+Relief"
+    images: coldFluRelief
   },
   {
     id: 27,
@@ -256,7 +275,7 @@ const medicine = [
     rating: 4.7,
     category: "Heart Care",
     expiryDate: "2026-11-10",
-    images: "https://via.placeholder.com/200x150?text=Atorvastatin"
+    images: atorvastatinTablet
   },
   {
     id: 28,
@@ -267,7 +286,7 @@ const medicine = [
     rating: 4.6,
     category: "Digestive Care",
     expiryDate: "2027-02-28",
-    images: "https://via.placeholder.com/200x150?text=Probiotic"
+    images: probiotic
   },
   {
     id: 29,
@@ -278,7 +297,7 @@ const medicine = [
     rating: 4.5,
     category: "Pain Relief",
     expiryDate: "2026-05-15",
-    images: "https://via.placeholder.com/200x150?text=Naproxen"
+    images: naproxen
   },
   {
     id: 30,
@@ -289,7 +308,7 @@ const medicine = [
     rating: 4.6,
     category: "Vitamins",
     expiryDate: "2026-12-31",
-    images: "https://via.placeholder.com/200x150?text=Biotin"
+    images: biotin
   },
   {
     id: 31,
@@ -300,7 +319,7 @@ const medicine = [
     rating: 4.7,
     category: "Supplements",
     expiryDate: "2027-03-10",
-    images: "https://via.placeholder.com/200x150?text=Magnesium+Calcium"
+    images: magnesiumCalcium
   },
   {
     id: 32,
@@ -311,7 +330,7 @@ const medicine = [
     rating: 4.8,
     category: "Respiratory Care",
     expiryDate: "2026-06-20",
-    images: "https://via.placeholder.com/200x150?text=Salbutamol+Inhaler"
+    images: salbutamolInhaler
   },
   {
     id: 33,
@@ -322,7 +341,7 @@ const medicine = [
     rating: 4.5,
     category: "Digestive Care",
     expiryDate: "2026-09-30",
-    images: "https://via.placeholder.com/200x150?text=Oral+Solution"
+    images: oralSolution
   },
   {
     id: 34,
@@ -333,7 +352,7 @@ const medicine = [
     rating: 4.6,
     category: "Skin Care",
     expiryDate: "2027-01-15",
-    images: "https://via.placeholder.com/200x150?text=Hand+Sanitizer"
+    images: handSanitizer
   },
   {
     id: 35,
@@ -344,7 +363,7 @@ const medicine = [
     rating: 4.4,
     category: "Allergy",
     expiryDate: "2026-07-05",
-    images: "https://via.placeholder.com/200x150?text=Levocetirizine"
+    images: levocetirizine5mg
   },
   {
     id: 36,
@@ -355,7 +374,7 @@ const medicine = [
     rating: 4.6,
     category: "Antibiotics",
     expiryDate: "2026-10-25",
-    images: "https://via.placeholder.com/200x150?text=Cefixime"
+    images: cefixime
   },
   {
     id: 37,
@@ -366,7 +385,7 @@ const medicine = [
     rating: 4.5,
     category: "Vitamins",
     expiryDate: "2027-04-01",
-    images: "https://via.placeholder.com/200x150?text=Multivitamin+Syrup"
+    images: multivitaminSyrup
   },
   {
     id: 38,
@@ -377,7 +396,7 @@ const medicine = [
     rating: 4.7,
     category: "Skin Care",
     expiryDate: "2026-11-30",
-    images: "https://via.placeholder.com/200x150?text=Anti-Fungal+Cream"
+    images: antiFungalCream
   },
   {
     id: 39,
@@ -388,7 +407,7 @@ const medicine = [
     rating: 4.5,
     category: "Diabetic Care",
     expiryDate: "2026-08-20",
-    images: "https://via.placeholder.com/200x150?text=Glimepiride"
+    images: glimepiride
   },
   {
     id: 40,
@@ -399,7 +418,7 @@ const medicine = [
     rating: 4.6,
     category: "Vitamins",
     expiryDate: "2027-02-10",
-    images: "https://via.placeholder.com/200x150?text=Vitamin+B+Complex"
+    images: vitaminBcomplex
   }
 ];
 
