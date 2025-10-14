@@ -8,7 +8,6 @@ export const CartProvider = ({ children }) => {
   const addToCart = (item) => {
     setCartItems((prev) => {
       const existingItem = prev.find((i) => i.id === item.id);
-
       if (existingItem) {
         return prev.map((i) =>
           i.id === item.id ? { ...i, quantity: i.quantity + 1 } : i
