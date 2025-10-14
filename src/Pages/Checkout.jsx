@@ -5,6 +5,7 @@ import { CartContext } from "../Context/CartContext";
 import { db, auth } from "../firebase";
 import { collection, addDoc, updateDoc, doc, serverTimestamp } from "firebase/firestore";
 import { ShoppingBag, CreditCard, Truck, CheckCircle } from "lucide-react";
+import toast, { Toaster } from "react-hot-toast"; // ✅ Import react-hot-toast
 
 const Checkout = () => {
   const { cartItems, totalAmount, clearCart } = useContext(CartContext);
@@ -26,11 +27,11 @@ const Checkout = () => {
 
   const handleOrder = async () => {
     if (cartItems.length === 0) {
-      alert("Your cart is empty!");
+      toast.error("Your cart is empty!"); // ✅ Modern toast
       return;
     }
     if (!customer.name || !customer.phone || !customer.address) {
-      alert("Please fill all required details before placing order!");
+      toast.error("Please fill all required details before placing order!"); // ✅ Modern toast
       return;
     }
 
@@ -77,6 +78,7 @@ const Checkout = () => {
             });
             clearCart();
             setSuccess(true);
+            toast.success("Payment successful!"); // ✅ Modern toast
             setTimeout(() => navigate("/orders"), 2500);
           },
           prefill: { name: safeUser.name, email: safeUser.email, contact: customer.phone },
@@ -88,11 +90,12 @@ const Checkout = () => {
         await updateDoc(doc(db, "orders", orderRef.id), { status: "Pending (COD)" });
         clearCart();
         setSuccess(true);
+        toast.success("Order placed successfully!"); // ✅ Modern toast
         setTimeout(() => navigate("/orders"), 2500);
       }
     } catch (error) {
       console.error("Error placing order:", error);
-      alert("Something went wrong. Please try again!");
+      toast.error("Something went wrong. Please try again!"); // ✅ Modern toast
     } finally {
       setLoading(false);
     }
@@ -121,7 +124,8 @@ const Checkout = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 py-10 px-6 flex justify-center">
+    <div className="min-h-screen bg-gray-50 py-10 px-6 flex justify-center relative">
+      <Toaster position="top-right" reverseOrder={false} /> {/* ✅ Toast container */}
       <div className="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-4xl">
         <h2 className="text-3xl font-extrabold mb-8 text-center text-gray-900 flex items-center justify-center gap-2">
           <ShoppingBag className="text-blue-600 w-8 h-8" /> Checkout
