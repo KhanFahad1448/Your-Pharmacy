@@ -1,16 +1,70 @@
-# React + Vite
+## Your Pharmacy
+![Home Screenshot](./src/assets/home-screenshot.png)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+Your Pharmacy is a full-featured online pharmacy platform built with React and Vite. It allows users to browse medicines, healthcare products, and lab tests, add items to the cart, and place orders. Admin users can manage orders through a dedicated dashboard.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project emphasizes mobile responsiveness, user authentication, and real-time data management with Firebase Firestore.
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Browse Medicines, Healthcare Products, and Lab Tests
 
-## Expanding the ESLint configuration
+Add to Cart and manage quantities
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Place Orders with Cash on Delivery or Razorpay payment
+
+Admin Dashboard to view and manage all orders
+
+User authentication and registration with Firebase Auth
+
+View Booked Lab Tests
+
+Responsive design for mobile, tablet, and desktop
+
+Interactive UI components with hover effects and animations
+
+## Tech Stack
+
+Frontend: React, Vite, Tailwind CSS, Lucide Icons
+
+Backend / Database: Firebase Firestore & Firebase Authentication
+
+Payment Gateway: Razorpay
+
+Routing & State Management: React Router, React Context API
+
+Notifications: react-hot-toast
+
+## Tools Used
+
+VS Code (IDE)
+
+Git & GitHub (Version Control)
+
+Chrome / Browser Dev Tools (Testing & Debugging)
+
+TailwindCSS (Styling)
+
+Firebase (Database & Authentication)
+
+## How to Use
+
+Open the app and browse products.
+
+Add products to the cart.
+
+Proceed to checkout (login required).
+
+Choose payment method (COD or Razorpay).
+
+Place order and get order confirmation.
+
+Admin users can log in to manage orders.
+
+## How to Run
+
+npm install 
+
+npm run dev
