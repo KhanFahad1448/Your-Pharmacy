@@ -1,4 +1,3 @@
-// src/Medicine.jsx
 import React, { useState, useContext } from "react";
 import medicines from "../Medicines/medicineData";
 import bgImage from "../assets/MedicineBackground.jpg";
@@ -45,7 +44,7 @@ const Medicine = () => {
 
   return (
     <div
-      className="min-h-screen bg-cover bg-center bg-no-repeat py-16 px-6 md:px-20 relative"
+      className="min-h-screen bg-cover bg-center bg-no-repeat py-10 px-4 sm:px-6 md:px-16 relative"
       style={{
         backgroundImage: `url(${bgImage})`,
         backgroundAttachment: "fixed",
@@ -54,17 +53,17 @@ const Medicine = () => {
       <div className="absolute inset-0 bg-black/30"></div>
 
       <div className="relative z-10 text-center text-white">
-        <h1 className="text-3xl md:text-5xl font-extrabold mb-8 tracking-tight">
+        <h1 className="text-2xl sm:text-3xl md:text-5xl font-extrabold mb-6 sm:mb-8 md:mb-10 tracking-tight">
           Available Medicines 💊
         </h1>
 
         {/* Category Filter */}
-        <div className="flex flex-wrap justify-center gap-4 mb-10">
+        <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-6 sm:mb-8">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setCategoryFilter(cat)}
-              className={`px-4 py-2 rounded-full border border-white/60 transition-all duration-300 whitespace-nowrap ${
+              className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-white/60 transition-all duration-300 text-sm sm:text-base whitespace-nowrap ${
                 categoryFilter === cat
                   ? "bg-blue-600 text-white border-blue-600 shadow-lg scale-105"
                   : "bg-white/20 text-white hover:bg-white/40"
@@ -76,35 +75,35 @@ const Medicine = () => {
         </div>
 
         {/* Medicines Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
           {filteredMedicines.map((item) => (
             <div
               key={item.id}
-              className="bg-white/20 p-4 sm:p-5 rounded-3xl shadow-md backdrop-blur-sm flex flex-col transition-all duration-300 hover:scale-105 hover:shadow-xl"
+              className="bg-white/20 p-3 sm:p-4 md:p-5 rounded-3xl shadow-md backdrop-blur-sm flex flex-col transition-all duration-300 hover:scale-105 hover:shadow-xl"
             >
               {item.images && (
                 <img
                   src={item.images}
                   alt={item.name}
-                  className="w-full h-40 object-cover rounded-lg mb-3"
+                  className="w-full h-36 sm:h-40 object-cover rounded-lg mb-3"
                 />
               )}
 
               <h2 className="text-lg sm:text-xl font-semibold mb-1">{item.name}</h2>
-              <p className="text-sm mb-1">Category: {item.category}</p>
+              <p className="text-xs sm:text-sm mb-1">Category: {item.category}</p>
 
               <div className="flex items-center justify-between mb-2">
-                <span className="text-lg font-bold">
+                <span className="text-base sm:text-lg font-bold">
                   ₹{item.price - (item.price * (item.discount || 0)) / 100}
                 </span>
                 {item.discount > 0 && (
-                  <span className="text-sm text-red-400">{item.discount}% Off</span>
+                  <span className="text-xs sm:text-sm text-red-400">{item.discount}% Off</span>
                 )}
               </div>
 
               <div className="flex items-center mb-2">
                 <span
-                  className={`px-2 py-1 text-xs rounded-full ${
+                  className={`px-2 py-0.5 sm:px-3 sm:py-1 text-xs sm:text-sm rounded-full ${
                     item.stock !== false
                       ? "bg-green-100 text-green-800"
                       : "bg-red-100 text-red-800"
@@ -112,18 +111,18 @@ const Medicine = () => {
                 >
                   {item.stock !== false ? "In Stock" : "Out of Stock"}
                 </span>
-                <span className="ml-auto text-sm text-yellow-400">
+                <span className="ml-auto text-xs sm:text-sm text-yellow-400">
                   ⭐ {item.rating || 4.5}
                 </span>
               </div>
 
-              <p className="text-sm mb-3">Expiry: {formatDate(item.expiryDate)}</p>
+              <p className="text-xs sm:text-sm mb-3">Expiry: {formatDate(item.expiryDate)}</p>
 
               {/* Add to Cart Button */}
               <button
                 onClick={() => handleAddToCart(item)}
                 disabled={item.stock === false || addedItems[item.id]}
-                className={`mt-auto w-full py-2 rounded-xl font-semibold flex justify-center items-center gap-2 transition-all duration-300 ${
+                className={`mt-auto w-full py-2 sm:py-2.5 rounded-xl font-semibold flex justify-center items-center gap-2 text-sm sm:text-base transition-all duration-300 ${
                   item.stock === false
                     ? "bg-gray-400 cursor-not-allowed text-white"
                     : addedItems[item.id]
@@ -133,11 +132,11 @@ const Medicine = () => {
               >
                 {addedItems[item.id] ? (
                   <>
-                    <CheckCircle className="w-5 h-5" /> Added
+                    <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5" /> Added
                   </>
                 ) : (
                   <>
-                    <ShoppingCart className="w-5 h-5" /> Add to Cart
+                    <ShoppingCart className="w-4 h-4 sm:w-5 sm:h-5" /> Add to Cart
                   </>
                 )}
               </button>
@@ -146,12 +145,12 @@ const Medicine = () => {
         </div>
 
         {/* FAQ Section */}
-        <div className="mt-16 p-6 md:p-8 rounded-3xl bg-white/20 backdrop-blur-sm">
-          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center">
+        <div className="mt-10 sm:mt-12 p-4 sm:p-6 md:p-8 rounded-3xl bg-white/20 backdrop-blur-sm">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 sm:mb-6 text-center">
             Frequently Asked Questions ❓
           </h2>
 
-          <div className="space-y-4 md:space-y-6 text-left">
+          <div className="space-y-3 sm:space-y-4 md:space-y-6 text-left">
             {[
               {
                 q: "✅ When will Your Pharmacy deliver my medicines?",
@@ -172,27 +171,27 @@ const Medicine = () => {
             ].map((faq, index) => (
               <div
                 key={index}
-                className="border border-white/40 rounded-3xl p-4 md:p-5 transition-shadow duration-300 hover:shadow-lg"
+                className="border border-white/40 rounded-3xl p-3 sm:p-4 md:p-5 transition-shadow duration-300 hover:shadow-lg"
               >
-                <h3 className="font-semibold text-sm md:text-base lg:text-lg">{faq.q}</h3>
-                <p className="text-sm md:text-base mt-2 leading-relaxed">{faq.a}</p>
+                <h3 className="font-semibold text-xs sm:text-sm md:text-base">{faq.q}</h3>
+                <p className="text-xs sm:text-sm md:text-base mt-1 sm:mt-2 leading-relaxed">{faq.a}</p>
               </div>
             ))}
           </div>
         </div>
 
         {/* Customer Testimonials */}
-        <div className="mt-16 py-12">
-          <h2 className="text-3xl font-bold mb-8 text-center flex items-center justify-center gap-2">
+        <div className="mt-10 sm:mt-12 py-8 sm:py-10">
+          <h2 className="text-2xl sm:text-3xl md:text-3xl font-bold mb-6 sm:mb-8 text-center flex flex-col sm:flex-row items-center justify-center gap-2">
             <img
               src="https://cdn-icons-png.flaticon.com/512/2922/2922561.png"
               alt="Customer icon"
-              className="w-10 h-10"
+              className="w-8 h-8 sm:w-10 sm:h-10"
             />
             See What Our Customers Have to Say About Us
           </h2>
 
-          <div className="flex flex-wrap justify-center gap-6">
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
             {[
               {
                 name: "Amit",
@@ -221,11 +220,11 @@ const Medicine = () => {
             ].map((testimonial, index) => (
               <div
                 key={index}
-                className="bg-white/20 rounded-3xl shadow-md p-6 max-w-xs backdrop-blur-sm transition-transform duration-300 hover:scale-105 hover:shadow-xl"
+                className="bg-white/20 rounded-3xl shadow-md p-4 sm:p-5 max-w-xs backdrop-blur-sm transition-transform duration-300 hover:scale-105 hover:shadow-xl"
               >
-                <h3 className="font-semibold text-lg">{testimonial.name}</h3>
-                <p className="text-sm">{testimonial.location}</p>
-                <p className="text-sm mt-2 leading-relaxed">{testimonial.feedback}</p>
+                <h3 className="font-semibold text-sm sm:text-base">{testimonial.name}</h3>
+                <p className="text-xs sm:text-sm">{testimonial.location}</p>
+                <p className="text-xs sm:text-sm mt-1 sm:mt-2 leading-relaxed">{testimonial.feedback}</p>
               </div>
             ))}
           </div>

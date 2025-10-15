@@ -14,6 +14,7 @@ export const useAuth = () => useContext(AuthContext);
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
+  // Handle Firebase Auth State Change
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(async (currentUser) => {
       if (currentUser) {
@@ -32,6 +33,7 @@ export const AuthProvider = ({ children }) => {
     return () => unsubscribe();
   }, []);
 
+  // Sign Up User
   const signUp = async (email, password, firstName, lastName = "") => {
     try {
       const userCredential = await createUserWithEmailAndPassword(
@@ -51,13 +53,24 @@ export const AuthProvider = ({ children }) => {
       });
 
       setUser({ uid, email, firstName, lastName, role: "user" });
-      toast.success("Signup successful!");
+      toast.success("✅ Signup successful!", {
+        style: {
+          fontSize: "0.9rem",
+          padding: "8px 12px",
+        },
+      });
     } catch (error) {
       console.error(error);
-      toast.error(error.message);
+      toast.error(error.message, {
+        style: {
+          fontSize: "0.85rem",
+          padding: "8px 12px",
+        },
+      });
     }
   };
 
+  // Log In User
   const logIn = async (email, password) => {
     try {
       const userCredential = await signInWithEmailAndPassword(
@@ -77,33 +90,68 @@ export const AuthProvider = ({ children }) => {
         setUser({ uid, role, ...userData });
 
         if (role === "admin") {
-          toast.success(`👋 Hello ${userData.firstName}, logged in as Admin`);
+          toast.success(`👋 Hello ${userData.firstName}, logged in as Admin`, {
+            style: {
+              fontSize: "0.9rem",
+              padding: "8px 12px",
+            },
+          });
         } else {
-          toast.success(`Welcome back, ${userData.firstName}!`);
+          toast.success(`Welcome back, ${userData.firstName}!`, {
+            style: {
+              fontSize: "0.9rem",
+              padding: "8px 12px",
+            },
+          });
         }
       } else {
-        toast.error("User profile not found!");
+        toast.error("User profile not found!", {
+          style: {
+            fontSize: "0.85rem",
+            padding: "8px 12px",
+          },
+        });
       }
     } catch (error) {
       console.error(error);
-      toast.error(error.message);
+      toast.error(error.message, {
+        style: {
+          fontSize: "0.85rem",
+          padding: "8px 12px",
+        },
+      });
     }
   };
 
+  // Log Out User
   const logOut = async () => {
     try {
       await signOut(auth);
       setUser(null);
-      toast.success("Logged out successfully!");
+      toast.success("👋 Logged out successfully!", {
+        style: {
+          fontSize: "0.9rem",
+          padding: "8px 12px",
+        },
+      });
     } catch (error) {
       console.error(error);
-      toast.error(error.message);
+      toast.error(error.message, {
+        style: {
+          fontSize: "0.85rem",
+          padding: "8px 12px",
+        },
+      });
     }
   };
 
   return (
-    <AuthContext.Provider value={{ user, signUp, logIn, logOut }}>
-      {children}
+    <AuthContext.Provider
+      value={{ user, signUp, logIn, logOut }}
+    >
+      <div className="text-[clamp(0.9rem,2.5vw,1rem)] sm:text-base md:text-[1rem] lg:text-[1.05rem] leading-relaxed">
+        {children}
+      </div>
     </AuthContext.Provider>
   );
 };

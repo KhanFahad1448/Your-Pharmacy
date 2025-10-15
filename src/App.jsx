@@ -74,14 +74,19 @@ function App() {
         <LabTestsProvider>
           <Router>
             <Toaster position="top-right" reverseOrder={false} />
-            <ScrollToTop /> {/* Add ScrollToTop here */}
-            <div className="flex flex-col min-h-screen">
+            <ScrollToTop /> {/* Scroll to top on route change */}
+            <div className="flex flex-col min-h-screen relative">
+              {/* Navbar fixed on top, mobile responsive */}
               <div className="fixed top-0 left-0 w-full z-50">
                 <Navbar />
               </div>
-              <main className="flex-grow mt-[120px] md:mt-[120px]">
+
+              {/* Main content */}
+              <main className="flex-grow mt-[120px] sm:mt-[100px] md:mt-[120px] px-4 sm:px-6 md:px-8">
                 <AppRoutes />
               </main>
+
+              {/* Footer */}
               <Footer />
             </div>
           </Router>

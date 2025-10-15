@@ -2,88 +2,73 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-gray-200 py-12 px-6">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-8">
+    <footer className="bg-gray-800 text-gray-200 py-10 px-4 sm:px-6">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
         
         {/* Company */}
         <div>
-          <h3 className="font-bold mb-4">Company</h3>
-          <ul className="space-y-2">
-            <li>About Us</li>
-            <li>Careers</li>
-            <li>Blog</li>
-            <li>Partner with Your Pharmacy</li>
+          <h3 className="font-bold mb-4 text-lg sm:text-xl">Company</h3>
+          <ul className="space-y-2 text-sm sm:text-base">
+            <li className="hover:text-white cursor-pointer">About Us</li>
+            <li className="hover:text-white cursor-pointer">Careers</li>
+            <li className="hover:text-white cursor-pointer">Blog</li>
+            <li className="hover:text-white cursor-pointer">Partner with Your Pharmacy</li>
           </ul>
         </div>
 
         {/* Our Services */}
         <div>
-          <h3 className="font-bold mb-4">Our Services</h3>
-          <ul className="space-y-2">
-            <li>Order Medicine</li>
-            <li>Healthcare Products</li>
-            <li>Lab Tests</li>
+          <h3 className="font-bold mb-4 text-lg sm:text-xl">Our Services</h3>
+          <ul className="space-y-2 text-sm sm:text-base">
+            <li className="hover:text-white cursor-pointer">Order Medicine</li>
+            <li className="hover:text-white cursor-pointer">Healthcare Products</li>
+            <li className="hover:text-white cursor-pointer">Lab Tests</li>
           </ul>
         </div>
 
         {/* Featured Categories */}
         <div>
-          <h3 className="font-bold mb-4">Featured Categories</h3>
-          <ul className="space-y-2">
+          <h3 className="font-bold mb-4 text-lg sm:text-xl">Featured Categories</h3>
+          <ul className="space-y-2 text-sm sm:text-base max-h-[200px] sm:max-h-none overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800">
             <li>Must Haves</li>
             <li>Skin Care</li>
             <li>Heart Care</li>
             <li>Vitamins & Supplements</li>
             <li>Homeopathy Care</li>
-            <li>Ayurvedic Care</li>
-            <li>Sports Nutrition</li>
-            <li>Health Food and Drinks</li>
-            <li>Diabetes Essentials</li>
-            <li>Mobility & Elderly Care</li>
-            <li>Mother and Baby Care</li>
-            <li>Health Concerns</li>
-            <li>Healthcare Devices</li>
-            <li>Sexual Wellness</li>
-            <li>Personal Care</li>
-            <li>Explore More</li>
           </ul>
         </div>
 
         {/* Need Help */}
         <div>
-          <h3 className="font-bold mb-4">Need Help</h3>
-          <ul className="space-y-2">
-            <li>Browse All Medicines</li>
-            <li>Browse All Molecules</li>
-            
-            
-            <li>FAQs</li>
+          <h3 className="font-bold mb-4 text-lg sm:text-xl">Need Help</h3>
+          <ul className="space-y-2 text-sm sm:text-base">
+            <li className="hover:text-white cursor-pointer">Browse All Medicines</li>
+            <li className="hover:text-white cursor-pointer">FAQs</li>
           </ul>
         </div>
 
         {/* Policy & Social */}
         <div>
-          <h3 className="font-bold mb-4">Policy Info</h3>
-          <ul className="space-y-2 mb-4">
-            <li>Editorial Policy</li>
-            <li>Privacy Policy</li>
+          <h3 className="font-bold mb-4 text-lg sm:text-xl">Policy Info</h3>
+          <ul className="space-y-2 mb-6 text-sm sm:text-base">
             
-            <li>Terms and Conditions</li>
-            <li>Customer Support Policy</li>
-            <li>Return Policy</li>
-            <li>Smartbuy Policy</li>
+            <li className="hover:text-white cursor-pointer">Privacy Policy</li>
+            <li className="hover:text-white cursor-pointer">Terms and Conditions</li>
+            
+            
           </ul>
-          <h3 className="font-bold mb-2">Follow Us On</h3>
-          <div className="flex space-x-4">
-            <a href="#" className="hover:text-white">Facebook</a>
-            <a href="#" className="hover:text-white">Instagram</a>
-            <a href="#" className="hover:text-white">Twitter</a>
-            <a href="#" className="hover:text-white">LinkedIn</a>
+
+          <h3 className="font-bold mb-3 text-lg sm:text-xl">Follow Us On</h3>
+          <div className="flex flex-wrap gap-3">
+            <a href="#" className="hover:text-white text-sm sm:text-base">Facebook</a>
+            <a href="#" className="hover:text-white text-sm sm:text-base">Instagram</a>
+            <a href="#" className="hover:text-white text-sm sm:text-base">Twitter</a>
+            <a href="#" className="hover:text-white text-sm sm:text-base">LinkedIn</a>
           </div>
         </div>
       </div>
 
-      <div className="mt-12 text-center text-gray-400 text-sm">
+      <div className="mt-10 text-center text-gray-400 text-xs sm:text-sm">
         &copy; {new Date().getFullYear()} Your Pharmacy. All rights reserved.
       </div>
     </footer>

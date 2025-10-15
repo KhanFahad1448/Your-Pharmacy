@@ -5,6 +5,7 @@ export const CartContext = createContext();
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
 
+  // ➕ Add to Cart
   const addToCart = (item) => {
     setCartItems((prev) => {
       const existingItem = prev.find((i) => i.id === item.id);
@@ -18,10 +19,12 @@ export const CartProvider = ({ children }) => {
     });
   };
 
+  // ❌ Remove from Cart
   const removeFromCart = (id) => {
     setCartItems((prev) => prev.filter((item) => item.id !== id));
   };
 
+  // ⬆️ Increase Quantity
   const increaseQuantity = (id) => {
     setCartItems((prev) =>
       prev.map((item) =>
@@ -30,6 +33,7 @@ export const CartProvider = ({ children }) => {
     );
   };
 
+  // ⬇️ Decrease Quantity
   const decreaseQuantity = (id) => {
     setCartItems((prev) =>
       prev
@@ -42,8 +46,10 @@ export const CartProvider = ({ children }) => {
     );
   };
 
+  // 🧹 Clear Cart
   const clearCart = () => setCartItems([]);
 
+  // 💰 Calculate Total
   const totalAmount = useMemo(() => {
     return cartItems.reduce(
       (total, item) => total + item.price * item.quantity,
@@ -63,7 +69,21 @@ export const CartProvider = ({ children }) => {
         totalAmount,
       }}
     >
-      {children}
+      {/* Responsive wrapper ensures all child components respect scaling */}
+      <div
+        className="
+          text-[clamp(0.85rem,2.5vw,1rem)] 
+          sm:text-[0.9rem] 
+          md:text-[1rem] 
+          lg:text-[1.05rem] 
+          leading-relaxed
+          w-full
+          px-2 sm:px-4 md:px-6 
+          transition-all duration-300
+        "
+      >
+        {children}
+      </div>
     </CartContext.Provider>
   );
 };

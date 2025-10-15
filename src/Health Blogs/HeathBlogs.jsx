@@ -9,21 +9,21 @@ import carousel3 from "../assets/carousel3.jpg";
 const HealthBlogs = () => {
   return (
     <div
-      className="min-h-screen bg-cover bg-center bg-no-repeat py-12 px-6 md:px-16 relative"
+      className="min-h-screen bg-cover bg-center bg-no-repeat py-10 px-4 sm:px-6 md:px-12 lg:px-16 relative"
       style={{
         backgroundImage: `url(${bgImage})`,
         backgroundAttachment: "fixed",
       }}
     >
-      {/* Overlay for readability */}
-      <div className="absolute inset-0 bg-black/20"></div>
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/30"></div>
 
-      {/* Page Content */}
+      {/* Content */}
       <div className="relative z-10">
-        {/* ✅ Smaller Carousel */}
+        {/* ✅ Carousel */}
         <div
           id="carouselExampleDark"
-          className="carousel slide carousel-dark mb-10 relative max-w-xl mx-auto rounded-2xl overflow-hidden shadow-lg"
+          className="carousel slide carousel-dark mb-8 sm:mb-10 relative max-w-md sm:max-w-lg md:max-w-2xl mx-auto rounded-2xl overflow-hidden shadow-lg"
           data-bs-ride="carousel"
         >
           <div className="carousel-inner">
@@ -36,13 +36,13 @@ const HealthBlogs = () => {
                 <img
                   src={img}
                   alt={`Slide ${idx + 1}`}
-                  className="w-full max-h-[350px] md:max-h-[450px] object-cover"
+                  className="w-full max-h-[220px] sm:max-h-[300px] md:max-h-[400px] lg:max-h-[450px] object-cover"
                 />
               </div>
             ))}
           </div>
 
-          {/* Prev & Next Buttons */}
+          {/* Controls */}
           <button
             className="carousel-control-prev"
             type="button"
@@ -63,30 +63,30 @@ const HealthBlogs = () => {
           </button>
         </div>
 
-        {/* Page Heading */}
-        <h1 className="text-4xl md:text-5xl font-extrabold text-center text-gray-800 mb-12 tracking-tight">
+        {/* ✅ Heading */}
+        <h1 className="text-2xl sm:text-3xl md:text-5xl font-extrabold text-center text-gray-800 mb-8 sm:mb-12 tracking-tight leading-snug">
           Health Blogs & Wellness Tips
         </h1>
 
-        {/* Blog Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 relative z-10">
+        {/* ✅ Blog Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
           {healthBlogs.map((blog) => (
             <div
               key={blog.id}
-              className="bg-white/20 backdrop-blur-lg rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-white/30 group"
+              className="bg-white/30 backdrop-blur-lg rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-white/40 group"
             >
               <div className="overflow-hidden">
                 <img
                   src={blog.image}
                   alt={blog.title}
-                  className="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-40 sm:h-48 md:h-56 object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
-              <div className="p-6 flex flex-col flex-1">
-                <h2 className="text-2xl font-semibold text-gray-900 mb-2 group-hover:text-green-600 transition-colors duration-300">
+              <div className="p-4 sm:p-5 md:p-6 flex flex-col flex-1 text-sm sm:text-base">
+                <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-900 mb-2 group-hover:text-green-600 transition-colors duration-300">
                   {blog.title}
                 </h2>
-                <p className="text-gray-900 mb-4 leading-relaxed flex-1">
+                <p className="text-gray-900 mb-3 sm:mb-4 leading-relaxed">
                   {blog.description}
                 </p>
                 <p className="text-gray-900 font-medium mb-2">

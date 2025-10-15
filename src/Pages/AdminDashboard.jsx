@@ -33,14 +33,13 @@ const AdminDashboard = () => {
         toast.error("Failed to fetch orders");
       }
     };
-
     fetchOrders();
   }, []);
 
   if (user?.role !== "admin") {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-100">
-        <h1 className="text-2xl font-bold text-red-500">
+        <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-red-500 text-center px-4">
           Access Denied. You are not an admin.
         </h1>
       </div>
@@ -69,13 +68,11 @@ const AdminDashboard = () => {
     }
   };
 
-  // Summary stats
   const totalOrders = orders.length;
   const receivedOrders = orders.filter((o) => o.status === "Received").length;
   const shippedOrders = orders.filter((o) => o.status === "Shipped").length;
   const deliveredOrders = orders.filter((o) => o.status === "Delivered").length;
 
-  // Fix search: filter by order ID, user name, or email (case insensitive)
   const filteredOrders = orders.filter((o) => {
     const query = searchQuery.toLowerCase();
     return (
@@ -85,7 +82,6 @@ const AdminDashboard = () => {
     );
   });
 
-  // Pagination
   const totalPages = Math.ceil(filteredOrders.length / ITEMS_PER_PAGE);
   const displayedOrders = filteredOrders.slice(
     (currentPage - 1) * ITEMS_PER_PAGE,
@@ -100,52 +96,52 @@ const AdminDashboard = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 py-10 px-6 md:px-20">
-      <h1 className="text-4xl font-extrabold text-center mb-12 text-gray-900">
+    <div className="min-h-screen bg-gray-50 py-6 px-4 sm:px-6 md:px-12 lg:px-20">
+      <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-center mb-8 sm:mb-10 md:mb-12 text-gray-900">
         Admin Dashboard
       </h1>
 
       {/* Summary Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-10 md:mb-12">
         {summaryCards.map((card, idx) => (
           <div
             key={idx}
-            className={`flex items-center p-6 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:scale-105 ${card.bg}`}
+            className={`flex items-center p-4 sm:p-5 md:p-6 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:scale-105 ${card.bg}`}
           >
-            <div className="mr-4">{card.icon}</div>
+            <div className="mr-3 sm:mr-4">{card.icon}</div>
             <div>
-              <h3 className={`text-sm font-medium ${card.textColor} mb-1`}>{card.title}</h3>
-              <p className={`text-2xl font-bold ${card.textColor}`}>{card.value}</p>
+              <h3 className={`text-xs sm:text-sm md:text-base font-medium ${card.textColor} mb-1`}>{card.title}</h3>
+              <p className={`text-lg sm:text-xl md:text-2xl font-bold ${card.textColor}`}>{card.value}</p>
             </div>
           </div>
         ))}
       </div>
 
       {/* Search */}
-      <div className="mb-6">
+      <div className="mb-4 sm:mb-6 md:mb-8">
         <input
           type="text"
           placeholder="Search by Order ID, User Name, or Email"
-          className="w-full md:w-1/3 p-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition"
+          className="w-full sm:w-2/3 md:w-1/2 p-2 sm:p-3 md:p-4 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition text-sm sm:text-base"
           value={searchQuery}
           onChange={(e) => {
             setSearchQuery(e.target.value);
-            setCurrentPage(1); // Reset to first page on new search
+            setCurrentPage(1);
           }}
         />
       </div>
 
       {/* Orders Table */}
       <div className="overflow-x-auto">
-        <table className="w-full bg-white rounded-xl shadow-md border border-gray-100">
+        <table className="w-full bg-white rounded-xl shadow-md border border-gray-100 text-sm sm:text-base md:text-base">
           <thead className="bg-gray-100">
             <tr>
-              <th className="py-3 px-4 text-left text-gray-600">Order ID</th>
-              <th className="py-3 px-4 text-left text-gray-600">User</th>
-              <th className="py-3 px-4 text-left text-gray-600">Date</th>
-              <th className="py-3 px-4 text-left text-gray-600">Status</th>
-              <th className="py-3 px-4 text-left text-gray-600">Total</th>
-              <th className="py-3 px-4 text-center text-gray-600">Action</th>
+              <th className="py-2 px-2 sm:py-3 sm:px-3 text-left text-gray-600">Order ID</th>
+              <th className="py-2 px-2 sm:py-3 sm:px-3 text-left text-gray-600">User</th>
+              <th className="py-2 px-2 sm:py-3 sm:px-3 text-left text-gray-600">Date</th>
+              <th className="py-2 px-2 sm:py-3 sm:px-3 text-left text-gray-600">Status</th>
+              <th className="py-2 px-2 sm:py-3 sm:px-3 text-left text-gray-600">Total</th>
+              <th className="py-2 px-2 sm:py-3 sm:px-3 text-center text-gray-600">Action</th>
             </tr>
           </thead>
           <tbody>
@@ -174,22 +170,22 @@ const AdminDashboard = () => {
 
               return (
                 <React.Fragment key={order.id}>
-                  <tr className="border-b border-gray-200 hover:bg-gray-50 transition">
-                    <td className="py-3 px-4 font-medium text-gray-800">{order.id}</td>
-                    <td className="py-3 px-4">{order.userName || order.userEmail || order.userId}</td>
-                    <td className="py-3 px-4">{order.createdAt?.toDate ? order.createdAt.toDate().toLocaleString() : order.createdAt}</td>
-                    <td className="py-3 px-4 flex items-center space-x-2">
-                      <StatusIcon className={statusBg} />
-                      <span className={`px-2 py-1 rounded-full text-sm font-medium ${statusBg}`}>
+                  <tr className="border-b border-gray-200 hover:bg-gray-50 transition text-xs sm:text-sm md:text-base">
+                    <td className="py-2 px-2 sm:py-3 sm:px-3 font-medium text-gray-800 break-words">{order.id}</td>
+                    <td className="py-2 px-2 sm:py-3 sm:px-3 break-words">{order.userName || order.userEmail || order.userId}</td>
+                    <td className="py-2 px-2 sm:py-3 sm:px-3">{order.createdAt?.toDate ? order.createdAt.toDate().toLocaleString() : order.createdAt}</td>
+                    <td className="py-2 px-2 sm:py-3 sm:px-3 flex items-center space-x-1">
+                      <StatusIcon className={`mr-1`} />
+                      <span className={`px-1 sm:px-2 py-0.5 rounded-full font-medium ${statusBg} text-xs sm:text-sm`}>
                         {order.status}
                       </span>
                     </td>
-                    <td className="py-3 px-4 font-semibold text-gray-900">₹{order.totalAmount}</td>
-                    <td className="py-3 px-4 text-center space-x-2">
+                    <td className="py-2 px-2 sm:py-3 sm:px-3 font-semibold text-gray-900">₹{order.totalAmount}</td>
+                    <td className="py-2 px-2 sm:py-3 sm:px-3 text-center space-x-1 flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2">
                       {order.status !== "Delivered" && (
                         <button
                           onClick={() => updateOrderStatus(order.id)}
-                          className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-3 py-1 rounded-xl hover:from-blue-700 hover:to-indigo-700 transition font-medium flex items-center justify-center space-x-1 mx-auto"
+                          className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-2 sm:px-3 py-1 rounded-xl hover:from-blue-700 hover:to-indigo-700 transition font-medium flex items-center justify-center gap-1 text-xs sm:text-sm"
                         >
                           <FaBoxOpen /> <span>Update</span>
                         </button>
@@ -201,7 +197,7 @@ const AdminDashboard = () => {
                             [order.id]: !prev[order.id],
                           }))
                         }
-                        className="text-gray-500 hover:text-gray-700 transition ml-2"
+                        className="text-gray-500 hover:text-gray-700 transition text-xs sm:text-sm"
                       >
                         {isExpanded ? <FaChevronUp /> : <FaChevronDown />}
                       </button>
@@ -211,24 +207,24 @@ const AdminDashboard = () => {
                   {/* Expanded row for items */}
                   {isExpanded && (
                     <tr>
-                      <td colSpan={6} className="bg-gray-50 p-4">
+                      <td colSpan={6} className="bg-gray-50 p-2 sm:p-4">
                         <div className="overflow-x-auto">
-                          <table className="w-full text-left">
+                          <table className="w-full text-left text-xs sm:text-sm md:text-base">
                             <thead>
                               <tr>
-                                <th className="py-2 px-3 text-gray-600">Product</th>
-                                <th className="py-2 px-3 text-gray-600">Quantity</th>
-                                <th className="py-2 px-3 text-gray-600">Price</th>
-                                <th className="py-2 px-3 text-gray-600">Subtotal</th>
+                                <th className="py-1 px-2 sm:py-2 sm:px-3 text-gray-600">Product</th>
+                                <th className="py-1 px-2 sm:py-2 sm:px-3 text-gray-600">Quantity</th>
+                                <th className="py-1 px-2 sm:py-2 sm:px-3 text-gray-600">Price</th>
+                                <th className="py-1 px-2 sm:py-2 sm:px-3 text-gray-600">Subtotal</th>
                               </tr>
                             </thead>
                             <tbody>
                               {order.items.map((item, idx) => (
                                 <tr key={idx} className="border-b border-gray-200 last:border-b-0">
-                                  <td className="py-2 px-3">{item.name}</td>
-                                  <td className="py-2 px-3">{item.quantity}</td>
-                                  <td className="py-2 px-3">₹{item.price}</td>
-                                  <td className="py-2 px-3 font-semibold">₹{item.price * item.quantity}</td>
+                                  <td className="py-1 px-2 sm:py-2 sm:px-3 break-words">{item.name}</td>
+                                  <td className="py-1 px-2 sm:py-2 sm:px-3">{item.quantity}</td>
+                                  <td className="py-1 px-2 sm:py-2 sm:px-3">₹{item.price}</td>
+                                  <td className="py-1 px-2 sm:py-2 sm:px-3 font-semibold">₹{item.price * item.quantity}</td>
                                 </tr>
                               ))}
                             </tbody>
@@ -245,20 +241,20 @@ const AdminDashboard = () => {
       </div>
 
       {/* Pagination */}
-      <div className="flex justify-center items-center mt-6 space-x-3">
+      <div className="flex flex-col sm:flex-row justify-center items-center mt-4 sm:mt-6 space-y-2 sm:space-y-0 sm:space-x-3">
         <button
           onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
-          className="px-4 py-2 bg-gray-200 rounded-lg hover:bg-gray-300 transition"
+          className="px-4 py-2 bg-gray-200 rounded-lg hover:bg-gray-300 transition text-sm sm:text-base"
           disabled={currentPage === 1}
         >
           Prev
         </button>
-        <span className="px-3 py-2 rounded-lg bg-indigo-100 text-indigo-700 font-medium">
+        <span className="px-3 py-2 rounded-lg bg-indigo-100 text-indigo-700 font-medium text-sm sm:text-base">
           {currentPage} / {totalPages || 1}
         </span>
         <button
           onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
-          className="px-4 py-2 bg-gray-200 rounded-lg hover:bg-gray-300 transition"
+          className="px-4 py-2 bg-gray-200 rounded-lg hover:bg-gray-300 transition text-sm sm:text-base"
           disabled={currentPage === totalPages || totalPages === 0}
         >
           Next
