@@ -11,7 +11,7 @@ import montelukast from "..//Images/montelukast.jpg";
 import cetirizinesyrup from "..//Images/cetirizineSyrup.jpg";
 import diclofenacgel from "..//Images/diclofenacGel.jpg";
 import ors from "..//Images/orsHydration.jpg";
-import vitaminC from "..//Images/vitaminC.jpg";
+import vitaminC from "..//Images/VitaminC.jpg";
 import ironFolic from "..//Images/ironFolicAcid.jpg";
 import insulin from "..//Images/insulinInjection.jpg";
 import coughSyrup from "..//Images/coughSyrup.jpg";
