@@ -15,7 +15,7 @@ import vitaminC from "..//Images/VitaminC.jpg";
 import ironFolic from "..//Images/ironFolicAcid.jpg";
 import insulin from "..//Images/insulinInjection.jpg";
 import coughSyrup from "..//Images/coughSyrup.jpg";
-import calciumVitaminD3 from "..//Images/calcium+Vitamin.jpg";
+import calciumVitaminD3 from "..//Images/calcium+vitamin.jpg";
 import omeprazole from "..//Images/omeprazole.jpg";
 import levocetirizine from "..//Images/levocetirizine.jpg";
 import aspirin from "..//Images/aspirin.jpg";
