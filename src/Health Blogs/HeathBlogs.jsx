@@ -1,7 +1,7 @@
 // src/HealthBlogs/HealthBlogs.jsx
 import React from "react";
 import healthBlogs from "./healthBlogs";
-import bgImage from "../assets/healthblogBackground.jpg";
+import bgImage from "../assets/HealthblogBackground.jpg";
 import carousel1 from "../assets/carousel1.jpg";
 import carousel2 from "../assets/carousel2.jpg";
 import carousel3 from "../assets/carousel3.jpg";
