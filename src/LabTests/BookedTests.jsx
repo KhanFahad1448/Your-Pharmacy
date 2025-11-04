@@ -2,7 +2,7 @@
 import React, { useContext } from "react";
 import { LabTestsContext } from "../Context/LabTestsContext";
 import { CartContext } from "../Context/CartContext";
-import bgImage from "../assets/LabtestBackground.jpg";
+import bgImage from "../assets/LabTestBackground.jpg";
 import { Trash2, ShoppingCart } from "lucide-react";
 
 const BookedTests = () => {
